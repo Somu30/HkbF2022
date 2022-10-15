@@ -1,0 +1,3 @@
+class Solution:
+    def minCost(self, colors: str, neededTime: List[int]) -> int:
+        return sum(x[0][0]+x[0][1]-x[0][2] for x in (list(itertools.accumulate(range(1,len(colors)),lambda t,i:(*d[(colors[i]==colors[i-1],t[3],t[3] and colors[i]!=colors[i-1],)]((*t[:3],i)),colors[i]==colors[i-1],),initial=(0,0,0,False)))[-1:] for d in ([{(False,False,False):fs[0],(False,True,True):fs[1],(True,False,False):fs[2],(True,True,False):fs[3],} for fs in ((lambda p:(p[0],0,0),lambda p:(p[0]+p[1]-p[2],0,0),lambda p:(p[0],neededTime[p[3]-1]+neededTime[p[3]],max(neededTime[p[3]-1],neededTime[p[3]])),lambda p:(p[0],p[1]+neededTime[p[3]],max(p[2],neededTime[p[3]]))),)][0],)))
