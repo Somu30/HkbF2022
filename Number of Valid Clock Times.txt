@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+class Solution {
+public:
+    int countTime(string time) {
+        int hours=1,mins=1;
+        if(time[0] == '?' && time[1]== '?') hours=24;
+        else if(time[0] == '?'  && time[1] != '?') {
+            if(time[1]-'0' <= 3) hours = 3;
+            else hours = 2;
+        }
+        else if(time[0] != '?' && time[1]== '?') {
+            if(time[0]-'0' <= 1) hours = 10;
+            else hours = 4;
+        }
+        
+        if(time[3] == '?' && time[4]=='?') mins=60;
+        else if(time[3] == '?' && time[4]!='?') mins = 6;
+        else if(time[3] != '?' && time[4]=='?') mins = 10;
+        
+        return hours*mins;
+    }
+};
